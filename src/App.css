@@ -1,0 +1,310 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(to right, #9b59b6, #dcd6f7);
+  background-size: cover;
+  color: #6a1b9a;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.App {
+  width: 100%;
+  max-width: 1200px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+h2 {
+  text-align: center;
+  color: #6a1b9a;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #9b59b6;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin: 5px;
+  font-size: 100%;
+}
+
+button:hover {
+  background-color: #6a1b9a;
+  transform: scale(1.05);
+}
+
+button:disabled {
+  background-color: #b39ddb;
+  cursor: not-allowed;
+  transform: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  background-color: #f3e5f5;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+li:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h4 {
+  color: #9b59b6;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input[type="text"],
+textarea,
+input[type="date"] {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+input[type="date"] {
+  background-color: #f3e5f5;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+input[type="date"]:focus {
+  background-color: #e1bee7;
+}
+
+button[type="submit"] {
+  background-color: #9b59b6;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #6a1b9a;
+}
+
+.sidebar ul li a {
+  display: block;
+  text-align: center;
+  background: #9b59b6;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.sidebar ul li a:hover {
+  background: #6a1b9a;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(108, 99, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+}
+
+.card {
+  background-color: #f3e5f5;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Edit Form */
+/* Edit button specific styles */
+/* Edit button specific styles */
+.btn-edit {
+  display: inline-block;  /* Make it behave like an inline button */
+  background-color: #9b59b6; /* Blue color for Edit button */
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none; /* Remove underline from link */
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect */
+.btn-edit:hover {
+  background-color: #6a1b9a; /* Darker blue for hover effect */
+  transform: scale(1.05);
+}
+
+
+/* Modal for Confirm Deletion */
+.ReactModal__Overlay {
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ReactModal__Content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  max-width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ReactModal__Content button {
+  background-color: #9b59b6;
+  color: white;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.ReactModal__Content button:hover {
+  background-color: #6a1b9a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .App {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px 20px;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .App .content {
+    margin-left: 0;
+  }
+
+  .dashboard {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .dashboard .stat-card {
+    min-width: 100%;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  li {
+    padding: 12px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .card {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  input[type="text"],
+  textarea,
+  input[type="date"] {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .dashboard {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
